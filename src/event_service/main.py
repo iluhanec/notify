@@ -1,5 +1,3 @@
-from typing import Optional
-
 from fastapi import FastAPI, HTTPException
 from pydantic import ValidationError
 
@@ -8,11 +6,6 @@ from event_models.event_types import EventType, event_type_to_model_mapping
 
 
 app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
 
 
 @app.post("/items/{event_source}/{event_type}")
